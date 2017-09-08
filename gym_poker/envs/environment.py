@@ -16,13 +16,12 @@ class PokerEnv(gym.Env):
     metadata = {'render.modes': ['human']}
 
     def __init__(self):
+        super(PokerEnv, self).__init__()
+        self._action_space = spaces.Discrete(98)
         self.driver = webdriver.Chrome()
-
-    def _step(self, action):
-        pass
 
     def _reset(self):
         self.driver.get("http://103.68.82.34/p/")
 
-    def _render(self, mode='human', close=False):
-        pass
+    def _close(self):
+        self.driver.close()

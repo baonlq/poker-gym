@@ -1,4 +1,6 @@
 import gym
+import gym_pull
 
-env = gym.make('poker-v0')
+gym_pull.pull('github.com/baonlq/poker-gym')
+env = gym.make('baonlq/poker-v0')
 env.reset()
